@@ -10,32 +10,32 @@ app.use(function *(next){
   console.log('%s %s - %s', this.method, this.url, ms);
 });
 
-router.get('/api/users', function *(next) {
-  this.body = db.users;
+router.get('/api/artists', function *(next) {
+  this.body = db.artists;
 });
 
-router.get('/api/users/:userId', function *(next) {
-  const id = parseInt(this.params.userId);
-  this.body = db.users.find((user) => user.id == id);
+router.get('/api/artists/:artistId', function *(next) {
+  const id = parseInt(this.params.artistId);
+  this.body = db.artists.find((artist) => artist.id == id);
 });
 
-router.get('/api/threads', function *() {
-  this.body = db.threads;
+router.get('/api/albums', function *() {
+  this.body = db.albums;
 });
 
-router.get('/api/threads/:threadId', function *() {
-  const id = parseInt(this.params.threadId);
-  this.body = db.threads.find((thread) => thread.id == id);
+router.get('/api/albums/:albumId', function *() {
+  const id = parseInt(this.params.albumId);
+  this.body = db.albums.find((album) => album.id == id);
 });
 
-router.get('/api/posts/in-thread/:threadId', function *() {
-  const id = parseInt(this.params.threadId);
-  this.body = db.posts.filter((post) => post.thread == id);
+router.get('/api/songs/in-album/:albumId', function *() {
+  const id = parseInt(this.params.albumId);
+  this.body = db.songs.filter((song) => song.album == id);
 });
 
-router.get('/api/posts/by-user/:userId', function *() {
-  const id = parseInt(this.params.userId);
-  this.body = db.posts.filter((post) => post.user == id);
+router.get('/api/posts/by-artist/:artistId', function *() {
+  const id = parseInt(this.params.artistId);
+  this.body = db.songs.filter((song) => song.artist == id);
 });
 
 router.get('/api/', function *() {

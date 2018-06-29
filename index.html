@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	<nav class="navbar navbar-light bg-light">
+	  <span class="navbar-brand mb-0 h1">Playlistify</span>
+	</nav>
+	<br>
+	<div class="row">
+	  <div class="col-2"></div>
+	  <div class="col-8">
+	  	<form  >
+		  <div class="form-group">
+		    <b><label for="exampleAPICall">API Call</label></b>
+		    <input class="form-control" id="exampleAPICall" placeholder="Try threads/1" onkeypress="return checkEnter(event)">
+		  </div>
+<!-- 		<button type="button" class="btn btn-primary" onclick="return httpGetAsync(document.getElementById('exampleAPICall').value)">Submit</button> -->
+		<button type="button" class="btn btn-primary" onclick="return httpGetAsync('https://rdggp4n73l.execute-api.us-east-2.amazonaws.com/test/users/')">users</button>
+		<button type="button" class="btn btn-primary" onclick="return httpGetAsync('https://rdggp4n73l.execute-api.us-east-2.amazonaws.com/test/users/1')">users/1</button>
+		<button type="button" class="btn btn-primary" onclick="return httpGetAsync('https://rdggp4n73l.execute-api.us-east-2.amazonaws.com/test/threads/2')">threads/2</button>
+		<button type="button" class="btn btn-primary" onclick="return httpGetAsync('https://rdggp4n73l.execute-api.us-east-2.amazonaws.com/test/posts/by-user/1')">posts/by-user/1</button>
+		</form>
+		<br>
+		<div >
+			<b>Response</b>
+			<br><br>
+			<div id="response">
+			</div>
+		</div>
+	  </div>
+	  <div class="col-2"></div>
+	</div>
+</body>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<!-- 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> --><script>
+	//var basePath = "http://demo-1068009076.us-west-2.elb.amazonaws.com/api/users/1"
+
+	function checkEnter(e) {
+	    //See notes about 'which' and 'key'\
+	    var basePath = 'https://rdggp4n73l.execute-api.us-east-2.amazonaws.com/test/'
+	    if (e.keyCode == 13) {
+	    	httpGetAsync(basePath + document.getElementById('exampleAPICall').value)
+	    	return false
+	    }
+	}
+
+	function httpGetAsync(theUrl)
+	{
+		const http = new XMLHttpRequest()
+		http.open("GET", theUrl)
+		http.onload = function(e) {
+			console.log(http.responseText)
+			var responseText = document.getElementById("response");
+			responseText.innerHTML = '';
+			document.getElementById("response").append(http.responseText)
+		}
+		http.send()
+	}
+</script>
+</html>

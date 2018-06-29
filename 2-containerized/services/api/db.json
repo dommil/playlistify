@@ -1,79 +1,79 @@
 {
-  "users": [
+  "artists": [
     {
       "id": 1,
-      "username": "marceline",
-      "name": "Marceline Abadeer",
-      "bio": "1000 year old vampire queen, musician"
+      "username": "biebs",
+      "name": "Justin Bieber",
+      "bio": "No longer a baby."
     },
     {
       "id": 2,
-      "username": "finn",
-      "name": "Finn 'the Human' Mertens",
-      "bio": "Adventurer and hero, last human, defender of good"
+      "username": "highponytail",
+      "name": "Ariana Grande",
+      "bio": "Known for being engaged to Pete Davidson"
     },
     {
       "id": 3,
-      "username": "pb",
-      "name": "Bonnibel Bubblegum",
-      "bio": "Scientist, bearer of candy power, ruler of the candy kingdom"
+      "username": "lorde",
+      "name": "Ella Marija Lani Yelich-O'Connor",
+      "bio": "It's no surprise that she didn't use her real name."
     },
     {
       "id": 4,
-      "username": "jake",
-      "name": "Jake the Dog",
-      "bio": "Former criminal, now magical dog adventurer, and father"
+      "username": "lennon",
+      "name": "John Winston Ono Lennon",
+      "bio": "Rose colored glasses."
     }
   ],
 
-  "threads": [
+  "albums": [
     {
       "id": 1,
-      "title": "What's up with the Lich?",
+      "title": "Imagine",
       "createdBy": 4
     },
     {
       "id": 2,
-      "title": "Party at the candy kingdom tomorrow",
+      "title": "Pure Heroine",
       "createdBy": 3
     },
     {
       "id": 3,
-      "title": "In search of a new guitar",
+      "title": "Purpose",
       "createdBy": 1
     }
   ],
 
-  "posts": [
+  "songs": [
     {
-      "thread": 1,
-      "text": "Has anyone checked on the lich recently?",
-      "user": 4
+      "album": 1,
+      "text": "Imagine",
+      "artist": 4
     },
     {
-      "thread": 1,
-      "text": "I'll stop by and see how he's doing tomorrow!",
-      "user": 2
+      "album": 1,
+      "text": "Gimme Some Truth",
+      "artist": 4
     },
     {
-      "thread": 2,
-      "text": "Come party with the candy people tomorrow!",
-      "user": 3
+      "album": 2,
+      "text": "Royals",
+      "artist": 3
     },
     {
-      "thread": 2,
-      "text": "Mathematical!",
-      "user": 2
+      "album": 2,
+      "text": "Tennis Court",
+      "artist": 3
     },
     {
-      "thread": 2,
-      "text": "I'll bring my guitar",
-      "user": 1
+      "album": 3,
+      "text": "Sorry",
+      "artist": 1
     },
     {
-      "thread": 3,
-      "text": "I need a new guitar to play the most savory licks in Ooo",
-      "user": 1
+      "album": 3,
+      "text": "Love Yourself",
+      "artist": 1
     }
   ]
 }
