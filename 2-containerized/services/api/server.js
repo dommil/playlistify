@@ -33,7 +33,7 @@ router.get('/api/songs/in-album/:albumId', function *() {
   this.body = db.songs.filter((song) => song.album == id);
 });
 
-router.get('/api/posts/by-artist/:artistId', function *() {
+router.get('/api/songs/by-artist/:artistId', function *() {
   const id = parseInt(this.params.artistId);
   this.body = db.songs.filter((song) => song.artist == id);
 });
